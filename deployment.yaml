@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deploy
+  labels:
+    env: prod
+    type: frontend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: myapp1
+  template:
+    metadata:
+      name: lexi2-pod
+      labels:
+        app: myapp1   
+    spec:
+      containers:
+      - name: nginx1-container
+        image: nginx:1.27.2-alpine
+        ports:
+        - containerPort: 80 #this is the pod port that the container listens to
+        
