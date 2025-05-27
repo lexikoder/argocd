@@ -6,7 +6,7 @@ metadata:
     env: prod
     type: frontend
 spec:
-  replicas: 23
+  replicas: 24
   selector:
     matchLabels:
       app: myapp1
